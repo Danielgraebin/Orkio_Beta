@@ -3,19 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <title>Orkio — Governable AI to run real operations</title>
-  <meta name="description" content="Executive AI that coordinates agents, integrates systems, and executes with governance, audit trails, and security by design — built for B2B." />
+  <meta name="description" content="Executive AI that coordinates agents, integrates systems, and executes workflows with governance, audit trails, and security by design — built for B2B." />
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Share Preview -->
   <meta property="og:title" content="Orkio — Governable AI to run real operations" />
-  <meta property="og:description" content="Executive AI that coordinates agents, integrates systems, and executes with governance, audit trails, and security by design — built for B2B." />
+  <meta property="og:description" content="Executive AI that coordinates agents, integrates systems, and executes workflows with governance, audit trails, and security by design — built for B2B." />
   <meta property="og:type" content="website" />
-  <!-- Placeholder while using GitHub Pages; update later with your custom domain -->
   <meta property="og:url" content="" />
   <meta property="og:image" content="assets/og-orkio.png" />
   <meta name="twitter:card" content="summary_large_image" />
-
   <meta name="theme-color" content="#0B0F14" />
   <link rel="icon" href="assets/favicon.ico" />
 
@@ -30,7 +27,7 @@
       --radius-lg:18px; --radius-md:16px; --radius-sm:12px;
       --shadow:0 10px 30px rgba(0,0,0,.35);
       --shadow-soft:0 8px 22px rgba(0,0,0,.25);
-      --max:1020px;
+      --grid-gap:16px; --max:1120px;
       --font-title:"Exo 2", system-ui, -apple-system, Segoe UI, Roboto, Arial;
       --font-body:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial;
       --font-slogan:"DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial;
@@ -50,33 +47,33 @@
       color:var(--text);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:26px;
     }
 
-    .wrap{ width:100%; max-width:var(--max); margin:0 auto; }
+    a{ color:var(--primary); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
 
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      margin-bottom:16px;
-    }
-    .brand{ display:flex; align-items:center; gap:14px; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:46px 18px 70px; }
+
+    /* Topbar */
+    .topbar{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:18px; }
+    .brand{ display:flex; align-items:center; gap:16px; min-width:260px; }
+
     .logo-wrap{
-      width:64px; height:64px; border-radius:18px;
+      width:64px; height:64px;
+      border-radius:18px;
       border:1px solid rgba(245,247,250,.12);
       background:rgba(255,255,255,.03);
       display:grid; place-items:center;
       box-shadow:0 10px 24px rgba(0,0,0,.25);
-      overflow:visible;
+      overflow:hidden;
     }
     .logo{
-      width:46px; height:46px;
+      width:54px; height:54px;
       object-fit:contain; object-position:center;
       display:block;
-      filter:drop-shadow(0 0 10px rgba(55,197,255,.22));
+      filter:drop-shadow(0 0 10px rgba(55,197,255,.18));
     }
+
     .brand h3{
       font-family:var(--font-title);
       letter-spacing:.08em;
@@ -85,6 +82,11 @@
       opacity:.95;
     }
 
+    .nav{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav a{ font-size:14px; opacity:.86; padding:8px 10px; border-radius:10px; border:1px solid transparent; }
+    .nav a:hover{ opacity:1; background:rgba(255,255,255,.04); border-color:rgba(245,247,250,.10); text-decoration:none; }
+
+    /* Hero */
     .hero{
       position:relative;
       border:1px solid rgba(55,197,255,.18);
@@ -122,7 +124,7 @@
     }
     .lead{
       font-size:16px; line-height:1.75;
-      max-width:900px;
+      max-width:920px;
       opacity:.92;
       margin:0 auto 10px;
     }
@@ -134,10 +136,7 @@
       line-height:1.5;
     }
 
-    .cta{
-      display:flex; align-items:center; justify-content:center;
-      gap:12px; flex-wrap:wrap; margin-top:18px;
-    }
+    .cta{ display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:18px; }
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
@@ -146,17 +145,12 @@
       border:1px solid rgba(245,247,250,.18);
       background:rgba(255,255,255,.03);
       color:var(--text);
-      font-weight:700; font-size:14px;
+      font-weight:600; font-size:14px;
       text-decoration:none;
       box-shadow:var(--shadow-soft);
       transition:transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
     }
-    .btn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(55,197,255,.35);
-      background:rgba(255,255,255,.05);
-      text-decoration:none;
-    }
+    .btn:hover{ transform:translateY(-1px); border-color:rgba(55,197,255,.35); background:rgba(255,255,255,.05); text-decoration:none; }
     .btn.primary{
       background:linear-gradient(180deg, rgba(55,197,255,.95), rgba(55,197,255,.72));
       border-color:rgba(55,197,255,.65);
@@ -167,24 +161,83 @@
       border-color:rgba(43,176,232,.75);
       box-shadow:0 10px 32px rgba(55,197,255,.22);
     }
+
     .btn.whatsapp{ padding:12px 14px; }
     .wa-icon{ width:18px; height:18px; display:block; }
 
     .muted{ opacity:.74; }
     .small{ font-size:14px; }
+    .sp2{ height:24px; }
+
+    /* Cards / grids */
+    .grid{ display:grid; gap:var(--grid-gap); }
+    @media(min-width: 920px){
+      .grid-2{ grid-template-columns:1fr 1fr; }
+      .grid-3{ grid-template-columns:1fr 1fr 1fr; }
+    }
+
+    .card{
+      border-radius:var(--radius-md);
+      border:1px solid rgba(245,247,250,.12);
+      background:rgba(26,46,69,.24);
+      padding:22px;
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(10px);
+    }
+    .card h2{ font-family:var(--font-title); font-size:20px; margin:0 0 10px; letter-spacing:.01em; }
+    .card p{ margin:0; line-height:1.7; opacity:.92; }
+    ul{ margin:10px 0 0 18px; }
+    li{ margin:6px 0; opacity:.92; }
+
+    .section-title{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin:18px 0 12px; }
+    .section-title h2{ margin:0; font-family:var(--font-title); letter-spacing:.01em; }
+
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(245,247,250,.12);
+      background:rgba(255,255,255,.03);
+      font-size:13px; opacity:.9;
+    }
+    .chip .mini-dot{ width:8px; height:8px; border-radius:999px; background:var(--primary); box-shadow:0 0 12px rgba(55,197,255,.25); }
+
+    /* Images */
+    .figure{
+      border-radius:14px;
+      border:1px solid rgba(245,247,250,.10);
+      background:rgba(11,15,20,.35);
+      padding:14px;
+      overflow:hidden;
+    }
+    .figure img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+    }
+    .caption{
+      margin-top:10px;
+      font-size:13px;
+      opacity:.78;
+      line-height:1.5;
+    }
+
+    /* Org chart */
+    .org{
+      padding:18px;
+      border-radius:14px;
+      border:1px solid rgba(245,247,250,.10);
+      background:rgba(11,15,20,.35);
+      overflow:auto;
+    }
+    .org svg{ width:100%; height:auto; min-width:980px; display:block; }
 
     footer{
-      margin-top:18px; padding-top:16px;
+      margin-top:22px; padding-top:18px;
       border-top:1px solid rgba(245,247,250,.10);
       display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;
       opacity:.78; font-size:13px;
-    }
-
-    @media (max-width:520px){
-      h1{ font-size:36px; }
-      .hero{ padding:28px 18px; }
-      .logo-wrap{ width:56px; height:56px; }
-      .logo{ width:40px; height:40px; }
     }
   </style>
 </head>
@@ -194,13 +247,22 @@
     <div class="topbar">
       <div class="brand">
         <div class="logo-wrap">
-          <!-- Put your logo file in /assets/orkio-mark.png -->
-          <img class="logo" src="assets/orkio-mark.png" alt="ORKIO logo" />
+          <img class="logo" src="assets/orkio-logo.png" alt="ORKIO Logo" />
         </div>
         <div>
           <h3>ORKIO™</h3>
         </div>
       </div>
+
+      <nav class="nav" aria-label="Navigation">
+        <a href="#about">About</a>
+        <a href="#why">Why Orkio</a>
+        <a href="#who">Who it’s for</a>
+        <a href="#use-cases">Use cases</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
 
     <section class="hero" aria-label="Hero">
@@ -221,7 +283,7 @@
 
         <div class="cta">
           <a class="btn primary whatsapp"
-             href="https://wa.me/5551989697605?text=Hi!%20I%27d%20like%20to%20schedule%20an%20ORKIO%20demo.%20My%20name%20is%20____%20and%20our%20use%20case%20is%20____."
+             href="https://wa.me/5551989697605?text=Hi!%20I%27d%20like%20to%20request%20ORKIO%20Private%20Beta%20access%20and%20schedule%20a%20demo.%20My%20name%20is%20____%20and%20my%20use%20case%20is%20____."
              target="_blank" rel="noopener" aria-label="Contact on WhatsApp">
             <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
               <path fill="#061018" d="M19.11 17.39c-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.6.13-.18.27-.69.88-.84 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.32-1.56-1.47-1.82-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.83-1.99-.22-.53-.45-.46-.6-.47h-.52c-.18 0-.47.07-.71.34-.25.27-.93.91-.93 2.21s.95 2.55 1.08 2.73c.13.18 1.87 2.86 4.53 4.01.63.27 1.12.43 1.5.55.63.2 1.21.17 1.67.1.51-.08 1.6-.65 1.82-1.28.22-.63.22-1.17.15-1.28-.07-.11-.25-.18-.52-.31ZM16.03 27.6h-.01c-1.84 0-3.64-.5-5.22-1.44l-.37-.22-3.88 1.02 1.04-3.78-.24-.39c-1-1.62-1.53-3.5-1.53-5.44 0-5.76 4.7-10.45 10.48-10.45 2.79 0 5.41 1.08 7.38 3.04 1.97 1.96 3.06 4.57 3.06 7.36 0 5.76-4.71 10.45-10.49 10.45Zm8.94-19.4A12.51 12.51 0 0 0 16.03 4.5C9.11 4.5 3.48 10.12 3.48 17.03c0 2.2.58 4.35 1.69 6.24L3.4 29.5l6.38-1.67a12.5 12.5 0 0 0 6.25 1.66h.01c6.91 0 12.54-5.62 12.54-12.53 0-3.35-1.31-6.5-3.61-8.76Z"/>
@@ -240,11 +302,255 @@
       </div>
     </section>
 
-    <footer>
-      <span>© ORKIO™ • Private Beta</span>
-      <span class="muted small">Built by PatroAI</span>
-      <span class="muted small">Governable AI</span>
-    </footer>
+    <div class="sp2"></div>
+
+    <section id="about" class="grid grid-2" aria-label="About">
+      <div class="card">
+        <h2>The problem</h2>
+        <p>
+          Companies want AI to execute real workflows, but most tools are fragmented and not governable:
+          chat here, automation there — with limited traceability and control.
+        </p>
+        <ul class="small">
+          <li>Low auditability and higher operational risk</li>
+          <li>Integrations scattered and hard to maintain</li>
+          <li>No tenant isolation for multiple organizations (multi-tenant)</li>
+          <li>Unclear access policies, retention rules, and audit trails</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>What Orkio is</h2>
+        <p>
+          Orkio is an <b>executive AI</b> that coordinates agents and tools like a real organization:
+          you define the objective, and Orkio distributes work, integrates systems, executes tasks, and logs everything — with policies and auditability.
+        </p>
+        <ul class="small">
+          <li><b>Chat</b> (threads, files, actions)</li>
+          <li><b>Studio</b> (agent builder and configuration)</li>
+          <li><b>Agents Graph</b> (handoff, notify, invoke)</li>
+          <li><b>Connectors Hub</b> + <b>Trust & Audit</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="sp2"></div>
+
+    <section id="why" class="card" aria-label="Why Orkio">
+      <div class="section-title">
+        <h2>Why Orkio stands out</h2>
+        <span class="chip"><span class="mini-dot" aria-hidden="true"></span><span>B2B</span></span>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Centralized execution core</h2>
+          <p>
+            Instead of dozens of disconnected AIs, Orkio builds a <b>central decision core</b>
+            that coordinates agents, data, and business systems.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Agents as executives</h2>
+          <p>
+            Each agent has a clear role: <b>CEO AI</b>, <b>CFO AI</b>, Operations, Data, Compliance —
+            collaborating with handoffs and responsibilities.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Governance by design</h2>
+          <p>
+            Logs, policies, tenant isolation, and auditability are not add-ons.
+            They are part of the architecture from day one — ideal for critical operations.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>End-to-end audit trails</h2>
+          <p>
+            Every action executed by agents can be <b>tracked</b>, <b>explained</b>, and <b>exported</b>.
+            Sensitive actions can require approvals.
+          </p>
+          <ul class="small">
+            <li>RBAC/ABAC and tenant isolation</li>
+            <li>Exportable trails (CSV/JSON) for audit and compliance</li>
+            <li>Hierarchical control for high-risk actions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="sp2"></div>
+
+    <section id="who" class="card" aria-label="Who it’s for">
+      <div class="section-title">
+        <h2>Who it’s for</h2>
+        <span class="chip"><span class="mini-dot" aria-hidden="true"></span><span>B2B</span></span>
+      </div>
+      <ul class="small">
+        <li><b>Banks & funds:</b> credit, compliance, dossiers, reports, and audit trails.</li>
+        <li><b>Regulated operations:</b> back office, SLAs, integrations, governance and controls.</li>
+        <li><b>B2B consultancies:</b> each client becomes a workspace with isolated memory and policies.</li>
+      </ul>
+    </section>
+
+    <div class="sp2"></div>
+
+    <section id="use-cases" class="card" aria-label="Use cases">
+      <div class="section-title">
+        <h2>What Orkio does in practice</h2>
+        <span class="chip"><span class="mini-dot" aria-hidden="true"></span><span>Use cases</span></span>
+      </div>
+
+      <ul class="small">
+        <li><b>Fintech:</b> executive AI sets strategy → CFO AI analyzes metrics → agents execute onboarding, risk, compliance, and auditable reporting.</li>
+        <li><b>Services:</b> coordinates customer ops, back office, and KPIs with consistent execution.</li>
+        <li><b>B2B consultancies:</b> every customer becomes an “agents workspace” with memory and governance.</li>
+        <li><b>Internal teams:</b> integrates tools and standardizes execution (SLA, logs, decisions) with security.</li>
+      </ul>
+
+      <p class="muted small" style="margin-top:10px; line-height:1.6;">
+        Access is shared privately during the beta to ensure security, governance alignment, and proper onboarding.
+      </p>
+    </section>
+
+    <div class="sp2"></div>
+
+    <section id="workflow" class="card" aria-label="Workflow">
+      <div class="section-title">
+        <h2>How it works (Multi-Agent Workflow)</h2>
+        <span class="chip"><span class="mini-dot" aria-hidden="true"></span><span>Agents Graph</span></span>
+      </div>
+
+      <p class="small muted" style="line-height:1.6;">
+        Orkio operates like a digital organization: an orchestrator decomposes the goal into tasks, assigns specialists, and consolidates results — with governance and audit logs.
+      </p>
+
+      <div class="figure" style="margin-top:12px;">
+        <img src="assets/multi-agent-workflow.png" alt="Orkio multi-agent workflow diagram" />
+        <div class="caption">
+          Workflow overview: User → Orchestrator → Task Queue → Specialist Agents (RAG / Code / Research) → Results Store → Audit & reporting.
+        </div>
+      </div>
+    </section>
+
+    <div class="sp2"></div>
+
+    <section id="architecture" class="card" aria-label="Architecture">
+      <div class="section-title">
+        <h2>Architecture (one page)</h2>
+        <span class="chip"><span class="mini-dot" aria-hidden="true"></span><span>Enterprise-ready</span></span>
+      </div>
+
+      <p class="small muted">
+        A simple way to explain Orkio: it behaves like a “company of agents”, with an executive AI at the top.
+      </p>
+
+      <div class="org" role="img" aria-label="Orkio architecture">
+        <!-- Original SVG kept (clear and lightweight) -->
+        <svg viewBox="0 0 1400 520" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gBlue" x1="0" x2="1">
+              <stop offset="0" stop-color="#37C5FF" stop-opacity="0.95"/>
+              <stop offset="1" stop-color="#2bb0e8" stop-opacity="0.75"/>
+            </linearGradient>
+            <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="6" result="b"/>
+              <feColorMatrix in="b" type="matrix"
+                values="0 0 0 0 0.21
+                        0 0 0 0 0.77
+                        0 0 0 0 1
+                        0 0 0 0.9 0"/>
+              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <style>
+              .label { font-family: Inter, Arial; font-size: 16px; fill: #F5F7FA; }
+              .sub { font-family: Inter, Arial; font-size: 13px; fill: rgba(245,247,250,.78); }
+              .line { stroke: rgba(245,247,250,.18); stroke-width: 2; }
+              .line2 { stroke: rgba(55,197,255,.28); stroke-width: 2; }
+            </style>
+          </defs>
+
+          <rect x="530" y="40" width="340" height="84" rx="16" ry="16" fill="url(#gBlue)" filter="url(#glow)"/>
+          <text x="700" y="78" text-anchor="middle" class="label" style="fill:#061018;font-weight:700;">Executive AI (CEO AI)</text>
+          <text x="700" y="102" text-anchor="middle" class="sub" style="fill:#061018;opacity:.85;">Orchestration • Strategy • Decisions</text>
+
+          <line x1="700" y1="124" x2="700" y2="170" class="line"/>
+          <line x1="220" y1="170" x2="1180" y2="170" class="line"/>
+
+          <line x1="350" y1="170" x2="350" y2="214" class="line2"/>
+          <rect x="220" y="214" width="260" height="80" rx="16" ry="16" fill="rgba(26,46,69,.65)" stroke="rgba(245,247,250,.12)"/>
+          <text x="350" y="248" text-anchor="middle" class="label">CTO AI</text>
+          <text x="350" y="272" text-anchor="middle" class="sub">Platform • APIs • Connectors</text>
+
+          <line x1="700" y1="170" x2="700" y2="214" class="line2"/>
+          <rect x="570" y="214" width="260" height="80" rx="16" ry="16" fill="rgba(26,46,69,.65)" stroke="rgba(245,247,250,.12)"/>
+          <text x="700" y="248" text-anchor="middle" class="label">CFO AI</text>
+          <text x="700" y="272" text-anchor="middle" class="sub">Metrics • Unit economics • Reports</text>
+
+          <line x1="1050" y1="170" x2="1050" y2="214" class="line2"/>
+          <rect x="920" y="214" width="260" height="80" rx="16" ry="16" fill="rgba(26,46,69,.65)" stroke="rgba(245,247,250,.12)"/>
+          <text x="1050" y="248" text-anchor="middle" class="label">COO AI</text>
+          <text x="1050" y="272" text-anchor="middle" class="sub">Execution • Workflows • SLA</text>
+
+          <line x1="350" y1="294" x2="350" y2="330" class="line"/>
+          <line x1="700" y1="294" x2="700" y2="330" class="line"/>
+          <line x1="1050" y1="294" x2="1050" y2="330" class="line"/>
+
+          <rect x="80" y="330" width="250" height="72" rx="16" ry="16" fill="rgba(11,15,20,.55)" stroke="rgba(245,247,250,.12)"/>
+          <text x="205" y="360" text-anchor="middle" class="label">Agent Builder</text>
+          <text x="205" y="382" text-anchor="middle" class="sub">Studio • Policies • Memory</text>
+
+          <rect x="360" y="330" width="270" height="72" rx="16" ry="16" fill="rgba(11,15,20,.55)" stroke="rgba(245,247,250,.12)"/>
+          <text x="495" y="360" text-anchor="middle" class="label">Connectors Hub</text>
+          <text x="495" y="382" text-anchor="middle" class="sub">WhatsApp • CRM • Business Systems</text>
+
+          <rect x="710" y="330" width="260" height="72" rx="16" ry="16" fill="rgba(11,15,20,.55)" stroke="rgba(245,247,250,.12)"/>
+          <text x="840" y="360" text-anchor="middle" class="label">Analytics</text>
+          <text x="840" y="382" text-anchor="middle" class="sub">Dashboards • Exports</text>
+
+          <rect x="1000" y="330" width="260" height="72" rx="16" ry="16" fill="rgba(11,15,20,.55)" stroke="rgba(245,247,250,.12)"/>
+          <text x="1130" y="360" text-anchor="middle" class="label">Orchestrator</text>
+          <text x="1130" y="382" text-anchor="middle" class="sub">Goal → Provisioning</text>
+
+          <rect x="1210" y="330" width="170" height="72" rx="16" ry="16" fill="rgba(11,15,20,.55)" stroke="rgba(245,247,250,.12)"/>
+          <text x="1295" y="360" text-anchor="middle" class="label">Trust & Audit</text>
+          <text x="1295" y="382" text-anchor="middle" class="sub">RBAC/ABAC • Logs</text>
+        </svg>
+      </div>
+    </section>
+
+    <div class="sp2"></div>
+
+    <section id="contact" class="card" aria-label="Contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <span class="chip"><span class="mini-dot" aria-hidden="true"></span><span>Private Beta</span></span>
+      </div>
+
+      <p class="small muted" style="line-height:1.6;">
+        Orkio is currently in Private Beta. For demos and access requests, please contact us on WhatsApp.
+      </p>
+
+      <div class="cta" style="justify-content:flex-start; margin-top:12px;">
+        <a class="btn primary whatsapp"
+           href="https://wa.me/5551989697605?text=Hi!%20I%27d%20like%20to%20request%20ORKIO%20Private%20Beta%20access%20and%20schedule%20a%20demo.%20My%20name%20is%20____%20and%20my%20use%20case%20is%20____."
+           target="_blank" rel="noopener">
+          <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="#061018" d="M19.11 17.39c-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.6.13-.18.27-.69.88-.84 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.32-1.56-1.47-1.82-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.83-1.99-.22-.53-.45-.46-.6-.47h-.52c-.18 0-.47.07-.71.34-.25.27-.93.91-.93 2.21s.95 2.55 1.08 2.73c.13.18 1.87 2.86 4.53 4.01.63.27 1.12.43 1.5.55.63.2 1.21.17 1.67.1.51-.08 1.6-.65 1.82-1.28.22-.63.22-1.17.15-1.28-.07-.11-.25-.18-.52-.31ZM16.03 27.6h-.01c-1.84 0-3.64-.5-5.22-1.44l-.37-.22-3.88 1.02 1.04-3.78-.24-.39c-1-1.62-1.53-3.5-1.53-5.44 0-5.76 4.7-10.45 10.48-10.45 2.79 0 5.41 1.08 7.38 3.04 1.97 1.96 3.06 4.57 3.06 7.36 0 5.76-4.71 10.45-10.49 10.45Zm8.94-19.4A12.51 12.51 0 0 0 16.03 4.5C9.11 4.5 3.48 10.12 3.48 17.03c0 2.2.58 4.35 1.69 6.24L3.4 29.5l6.38-1.67a12.5 12.5 0 0 0 6.25 1.66h.01c6.91 0 12.54-5.62 12.54-12.53 0-3.35-1.31-6.5-3.61-8.76Z"/>
+          </svg>
+          Contact on WhatsApp
+        </a>
+      </div>
+
+      <footer>
+        <span>© ORKIO™ • Private Beta</span>
+        <span class="muted small">Built by PatroAI</span>
+        <span class="chip"><span class="mini-dot" aria-hidden="true"></span><span>Governable AI</span></span>
+      </footer>
+    </section>
   </div>
 </body>
 </html>
