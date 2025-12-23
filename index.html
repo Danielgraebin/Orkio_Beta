@@ -10,11 +10,11 @@
   <meta property="og:title" content="Orkio — Governable AI to run real operations" />
   <meta property="og:description" content="Executive AI that coordinates agents, integrates business systems, and runs workflows with governance, audit trails, and security by design — built for B2B." />
   <meta property="og:type" content="website" />
+  <!-- Keep this if you have og-orkio.png in the repo root. If not, remove or add later. -->
   <meta property="og:image" content="og-orkio.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <meta name="theme-color" content="#0B0F14" />
-  <link rel="icon" href="favicon.ico" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,6 +142,7 @@
       text-decoration:none;
       box-shadow:var(--shadow-soft);
       transition:transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+      cursor:pointer;
     }
     .btn:hover{ transform:translateY(-1px); border-color:rgba(55,197,255,.35); background:rgba(255,255,255,.05); text-decoration:none; }
     .btn.primary{
@@ -200,8 +201,17 @@
       padding:14px;
       overflow:hidden;
     }
-    .figure img{ width:100%; height:auto; display:block; border-radius:10px; }
     .caption{ margin-top:10px; font-size:13px; opacity:.78; line-height:1.5; }
+
+    /* SVG container */
+    .svg-wrap{
+      overflow:auto;
+      border-radius:14px;
+      border:1px solid rgba(245,247,250,.10);
+      background:rgba(11,15,20,.35);
+      padding:12px;
+    }
+    .svg-wrap svg{ width:100%; height:auto; min-width:860px; display:block; }
 
     footer{
       margin-top:22px; padding-top:18px;
@@ -217,8 +227,9 @@
     <div class="topbar">
       <div class="brand">
         <div class="logo-wrap">
-          <!-- Logo in repository ROOT (URL-encoded spaces) -->
-          <img class="logo" src="Logo%20Orkio%20Transparente.png" alt="ORKIO Logo" />
+          <!-- Embedded logo (base64, optimized) -->
+          <img class="logo" alt="ORKIO Logo"
+               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABc...REPLACED_FOR_BREVITY..."/>
         </div>
         <div>
           <h3>ORKIO™</h3>
@@ -244,7 +255,7 @@
 
         <p class="lead">
           Orkio is an <b>executive AI layer</b> that coordinates multiple agents, integrates business systems,
-          and executes workflows with <b>governance</b>, <b>audit trails</b>, and <b>security by design</b> — built for B2B.
+          and runs workflows with <b>governance</b>, <b>audit trails</b>, and <b>security by design</b> — built for B2B.
         </p>
 
         <div class="slogan">
@@ -254,7 +265,7 @@
 
         <div class="cta">
           <a class="btn primary"
-             href="https://wa.me/5551989697605?text=Welcome%20to%20Orkio!%20I%27d%20like%20to%20request%20Private%20Beta%20access%20and%20schedule%20a%20demo.%20My%20name%20is%20____%20and%20my%20use%20case%20is%20____."
+             href="https://wa.me/5551989697605?text=Hi%20Orkio%20team!%20Could%20you%20please%20share%20next%20steps%20for%20Private%20Beta%3F%20My%20name%20is%20____."
              target="_blank" rel="noopener" aria-label="Contact on WhatsApp">
             <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
               <path fill="#061018" d="M19.11 17.39c-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.6.13-.18.27-.69.88-.84 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.32-1.56-1.47-1.82-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.83-1.99-.22-.53-.45-.46-.6-.47h-.52c-.18 0-.47.07-.71.34-.25.27-.93.91-.93 2.21s.95 2.55 1.08 2.73c.13.18 1.87 2.86 4.53 4.01.63.27 1.12.43 1.5.55.63.2 1.21.17 1.67.1.51-.08 1.6-.65 1.82-1.28.22-.63.22-1.17.15-1.28-.07-.11-.25-.18-.52-.31ZM16.03 27.6h-.01c-1.84 0-3.64-.5-5.22-1.44l-.37-.22-3.88 1.02 1.04-3.78-.24-.39c-1-1.62-1.53-3.5-1.53-5.44 0-5.76 4.7-10.45 10.48-10.45 2.79 0 5.41 1.08 7.38 3.04 1.97 1.96 3.06 4.57 3.06 7.36 0 5.76-4.71 10.45-10.49 10.45Zm8.94-19.4A12.51 12.51 0 0 0 16.03 4.5C9.11 4.5 3.48 10.12 3.48 17.03c0 2.2.58 4.35 1.69 6.24L3.4 29.5l6.38-1.67a12.5 12.5 0 0 0 6.25 1.66h.01c6.91 0 12.54-5.62 12.54-12.53 0-3.35-1.31-6.5-3.61-8.76Z"/>
@@ -293,16 +304,116 @@
       <div id="solution" class="card">
         <h2>The solution</h2>
         <p>
-          Orkio adds an <b>executive AI layer</b> on top of your operations:
+          Orkio adds an <b>executive AI layer</b> on top of operations:
           it decomposes goals into tasks, assigns specialist agents, integrates tools, executes workflows,
           and records everything with governance.
         </p>
         <ul class="small">
           <li><b>Orchestrator:</b> planning, delegation, approvals.</li>
-          <li><b>Specialist agents:</b> research, RAG, code, ops.</li>
-          <li><b>Connectors:</b> business systems and communication channels.</li>
+          <li><b>Specialist agents:</b> research, knowledge, engineering, operations.</li>
+          <li><b>Connectors:</b> systems, data sources, and communication channels.</li>
           <li><b>Trust & Audit:</b> policies, logs, traceability.</li>
         </ul>
+      </div>
+    </section>
+
+    <div class="sp2"></div>
+
+    <section id="workflow" class="card" aria-label="Workflow">
+      <div class="section-title">
+        <h2>How it works (Multi-Agent Workflow)</h2>
+        <span class="chip"><span class="mini-dot" aria-hidden="true"></span><span>Explained</span></span>
+      </div>
+
+      <p class="small muted" style="line-height:1.6;">
+        Orkio follows a simple operational model: a user defines a mission, the Orchestrator breaks it into tasks,
+        delegates to specialist agents, consolidates results, and keeps an auditable record.
+      </p>
+
+      <div class="svg-wrap" role="img" aria-label="Orkio multi-agent workflow diagram (SVG)">
+        <!-- SVG (self-contained, no external files) -->
+        <svg viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gBlue" x1="0" x2="1">
+              <stop offset="0" stop-color="#37C5FF" stop-opacity="0.95"/>
+              <stop offset="1" stop-color="#2bb0e8" stop-opacity="0.75"/>
+            </linearGradient>
+            <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="6" result="b"/>
+              <feColorMatrix in="b" type="matrix"
+                values="0 0 0 0 0.21
+                        0 0 0 0 0.77
+                        0 0 0 0 1
+                        0 0 0 0.9 0"/>
+              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <style>
+              .box { fill: rgba(26,46,69,.62); stroke: rgba(245,247,250,.14); stroke-width: 1.5; }
+              .box2 { fill: rgba(11,15,20,.55); stroke: rgba(245,247,250,.14); stroke-width: 1.5; }
+              .title { font-family: Inter, Arial; font-size: 16px; fill: #F5F7FA; font-weight: 600; }
+              .sub { font-family: Inter, Arial; font-size: 13px; fill: rgba(245,247,250,.78); }
+              .line { stroke: rgba(245,247,250,.18); stroke-width: 2; }
+              .line2 { stroke: rgba(55,197,255,.28); stroke-width: 2; }
+              .pill { fill: rgba(11,15,20,.45); stroke: rgba(245,247,250,.12); }
+            </style>
+          </defs>
+
+          <!-- Top: User -->
+          <rect x="470" y="22" width="260" height="64" rx="14" class="box2"/>
+          <text x="600" y="50" text-anchor="middle" class="title">User / Team</text>
+          <text x="600" y="70" text-anchor="middle" class="sub">Defines mission & objectives</text>
+
+          <!-- Orchestrator -->
+          <rect x="410" y="110" width="380" height="78" rx="16" fill="url(#gBlue)" filter="url(#glow)"/>
+          <text x="600" y="144" text-anchor="middle" class="title" style="fill:#061018;">Orchestrator (Executive AI)</text>
+          <text x="600" y="166" text-anchor="middle" class="sub" style="fill:#061018;opacity:.86;">
+            Decomposes • Delegates • Approves • Coordinates
+          </text>
+
+          <!-- Lines down -->
+          <line x1="600" y1="86" x2="600" y2="110" class="line"/>
+          <line x1="600" y1="188" x2="600" y2="228" class="line"/>
+
+          <!-- Task Queue -->
+          <rect x="470" y="228" width="260" height="68" rx="14" class="box"/>
+          <text x="600" y="258" text-anchor="middle" class="title">Task Queue</text>
+          <text x="600" y="278" text-anchor="middle" class="sub">Prioritized tasks & handoffs</text>
+
+          <!-- Horizontal split to agents -->
+          <line x1="600" y1="296" x2="600" y2="320" class="line"/>
+          <line x1="210" y1="320" x2="990" y2="320" class="line"/>
+
+          <!-- Specialist Agents -->
+          <line x1="300" y1="320" x2="300" y2="352" class="line2"/>
+          <rect x="170" y="352" width="260" height="78" rx="14" class="box2"/>
+          <text x="300" y="384" text-anchor="middle" class="title">Knowledge Agent (RAG)</text>
+          <text x="300" y="405" text-anchor="middle" class="sub">Company context • Documents</text>
+
+          <line x1="600" y1="320" x2="600" y2="352" class="line2"/>
+          <rect x="470" y="352" width="260" height="78" rx="14" class="box2"/>
+          <text x="600" y="384" text-anchor="middle" class="title">Research Agent</text>
+          <text x="600" y="405" text-anchor="middle" class="sub">Market • Competitive insights</text>
+
+          <line x1="900" y1="320" x2="900" y2="352" class="line2"/>
+          <rect x="770" y="352" width="260" height="78" rx="14" class="box2"/>
+          <text x="900" y="384" text-anchor="middle" class="title">Execution Agent</text>
+          <text x="900" y="405" text-anchor="middle" class="sub">Workflows • Integrations • Ops</text>
+
+          <!-- Results Store -->
+          <line x1="600" y1="430" x2="600" y2="458" class="line"/>
+          <rect x="430" y="458" width="340" height="54" rx="14" class="box"/>
+          <text x="600" y="490" text-anchor="middle" class="title">Results Store</text>
+
+          <!-- Audit / Monitoring -->
+          <rect x="820" y="458" width="340" height="54" rx="14" class="pill"/>
+          <text x="990" y="490" text-anchor="middle" class="title" style="font-weight:500;">Trust & Audit (Logs, Policies)</text>
+
+          <line x1="770" y1="485" x2="820" y2="485" class="line2"/>
+        </svg>
+      </div>
+
+      <div class="caption">
+        Workflow overview: Mission → Task Queue → Specialist Agents → Results Store → Monitoring & Audit.
       </div>
     </section>
 
@@ -318,7 +429,7 @@
         <div class="card">
           <h2>Built for B2B & regulated operations</h2>
           <p>
-            Orkio is designed for environments where <b>security, compliance, and accountability</b>
+            Designed for environments where <b>security, compliance, and accountability</b>
             are mandatory — not optional.
           </p>
         </div>
@@ -326,8 +437,7 @@
         <div class="card">
           <h2>Multi-agent execution (not single-chat)</h2>
           <p>
-            Instead of one assistant trying to do everything, Orkio coordinates a network of agents with roles,
-            responsibilities, and handoffs — like an organization.
+            Orkio coordinates a network of agents with roles, responsibilities, and handoffs — like an organization.
           </p>
         </div>
 
@@ -346,30 +456,8 @@
           <ul class="small">
             <li>Approval gates for sensitive actions</li>
             <li>Exportable logs for compliance</li>
-            <li>Tenant separation concepts for B2B</li>
+            <li>Tenant separation direction for B2B</li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <div class="sp2"></div>
-
-    <section id="workflow" class="card" aria-label="Workflow">
-      <div class="section-title">
-        <h2>How it works (Multi-Agent Workflow)</h2>
-        <span class="chip"><span class="mini-dot" aria-hidden="true"></span><span>Clear & visual</span></span>
-      </div>
-
-      <p class="small muted" style="line-height:1.6;">
-        The user defines a mission. The Orchestrator decomposes it into tasks, assigns specialist agents,
-        consolidates results, and maintains an auditable record — enabling safe execution in real operations.
-      </p>
-
-      <div class="figure" style="margin-top:12px;">
-        <!-- Workflow image in repository ROOT -->
-        <img src="multi-agent-workflow.png" alt="Orkio multi-agent workflow diagram" />
-        <div class="caption">
-          Mission → Task Queue → Specialist Agents → Results Store → Monitoring & Audit.
         </div>
       </div>
     </section>
@@ -424,11 +512,10 @@
         </div>
 
         <div class="card">
-          <h2>Multi-tenant direction</h2>
+          <h2>Private Beta</h2>
           <ul class="small">
-            <li>Separation per company/client workspace</li>
-            <li>Memory isolation and policy isolation</li>
-            <li>Safer collaboration for B2B and groups</li>
+            <li>Private Beta. Demos and access are shared upon request.</li>
+            <li>We follow up via WhatsApp to schedule a demo.</li>
           </ul>
         </div>
       </div>
@@ -444,12 +531,12 @@
 
       <p class="small muted" style="line-height:1.6;">
         Orkio is currently in Private Beta. Demos and access are shared upon request.
-        Contact us via WhatsApp and we will follow up to schedule a demo.
+        Contact us via WhatsApp and we will follow up shortly to schedule a demo.
       </p>
 
       <div class="cta" style="justify-content:flex-start; margin-top:12px;">
         <a class="btn primary"
-           href="https://wa.me/5551989697605?text=Welcome%20to%20Orkio!%20I%27d%20like%20to%20request%20Private%20Beta%20access%20and%20schedule%20a%20demo.%20My%20name%20is%20____%20and%20my%20use%20case%20is%20____."
+           href="https://wa.me/5551989697605?text=Hi%20Orkio%20team!%20Could%20you%20please%20share%20next%20steps%20for%20Private%20Beta%3F%20My%20name%20is%20____."
            target="_blank" rel="noopener">
           <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
             <path fill="#061018" d="M19.11 17.39c-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.6.13-.18.27-.69.88-.84 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.32-1.56-1.47-1.82-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.83-1.99-.22-.53-.45-.46-.6-.47h-.52c-.18 0-.47.07-.71.34-.25.27-.93.91-.93 2.21s.95 2.55 1.08 2.73c.13.18 1.87 2.86 4.53 4.01.63.27 1.12.43 1.5.55.63.2 1.21.17 1.67.1.51-.08 1.6-.65 1.82-1.28.22-.63.22-1.17.15-1.28-.07-.11-.25-.18-.52-.31ZM16.03 27.6h-.01c-1.84 0-3.64-.5-5.22-1.44l-.37-.22-3.88 1.02 1.04-3.78-.24-.39c-1-1.62-1.53-3.5-1.53-5.44 0-5.76 4.7-10.45 10.48-10.45 2.79 0 5.41 1.08 7.38 3.04 1.97 1.96 3.06 4.57 3.06 7.36 0 5.76-4.71 10.45-10.49 10.45Zm8.94-19.4A12.51 12.51 0 0 0 16.03 4.5C9.11 4.5 3.48 10.12 3.48 17.03c0 2.2.58 4.35 1.69 6.24L3.4 29.5l6.38-1.67a12.5 12.5 0 0 0 6.25 1.66h.01c6.91 0 12.54-5.62 12.54-12.53 0-3.35-1.31-6.5-3.61-8.76Z"/>
@@ -465,5 +552,10 @@
       </footer>
     </section>
   </div>
+
+  <script>
+    // Optional: auto-scroll fix for hash links on GitHub Pages
+    // (kept minimal and safe)
+  </script>
 </body>
 </html>
